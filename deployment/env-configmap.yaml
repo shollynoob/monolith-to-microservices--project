@@ -3,8 +3,7 @@ kind: ConfigMap
 metadata:
   name: env-configmap
 data:
-  POSTGRES_USERNAME: olusola
-  POSTGRES_PASSWORD: olusolaolatunde
+
   POSTGRES_HOST: olusola-rds.cxkvzm6qszuy.us-east-1.rds.amazonaws.com
   POSTGRES_DB: postgres
   AWS_BUCKET: olusola-microservice
