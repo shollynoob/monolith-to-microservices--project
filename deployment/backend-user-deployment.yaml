@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
       - name: backend-user
-        image: docker.io/shollynoob/udagram-api-user:v2
+        image: docker.io/shollynoob/udagram-api-user:v3
         ports:
         - containerPort: 80
         resources:
           limits:
-            cpu: 500m
+            cpu: 1400m
           requests:
-            cpu: 200m
+            cpu: 600m
 
 
 ---
