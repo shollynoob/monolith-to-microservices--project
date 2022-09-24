@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: backend-feed
 spec:
   selector:
     matchLabels:
-      run: frontend
+      run: backend-feed
   replicas: 2
   template:
     metadata:
       labels:
-        run: frontend
+        run: backend-feed
     spec:
       containers:
-      - name: frontend
-        image: docker.io/shollynoob/udagram-frontend:v4
-        ports: 
+      - name: backend-feed
+        image: docker.io/shollynoob/udagram-api-feed:v4
+        ports:
         - containerPort: 80
         resources:
           limits:
@@ -27,12 +27,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
   labels:
-    run: frontend
+    service: backend-feed
+  name: backend-feed
 spec:
   ports:
-  - port: 80
-    protocol: TCP
+  - name: "8080"
+    port: 8080
+    targetPort: 8080
   selector:
-    run: frontend
+    service: backend-feed            
