@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: docker.io/shollynoob/udagram-reverseproxy:v5
+        image: docker.io/shollynoob/udagram-reverseproxy:v6
 
         ports:
         - containerPort: 80
